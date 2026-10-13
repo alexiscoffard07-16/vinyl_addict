@@ -320,7 +320,8 @@ button#btn-gauche:hover, button#btn-droite:hover {
 
 
 /* --- FOOTER --- */
-footer {
+footer 
+{
     background-color: whitesmoke;
     color: black;
     text-align: center;
@@ -329,4 +330,6 @@ footer {
     border-top: 1px solid #e0e0e0;
     margin-left: -50px;
     margin-right: -75px;
+    position : fixed;
+    bottom : 0px;
 }
