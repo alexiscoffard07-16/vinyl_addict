@@ -22,13 +22,15 @@
             $cheminImage = !empty($artiste['img_art']) ? $artiste['img_art'] : '../images/default_artiste.png'; 
             ?>
             <!-- On garde le petit onerror qu'on a appris tout à l'heure ! -->
-            <img src="<?php echo htmlspecialchars($cheminImage); ?>" alt="Photo de <?php echo htmlspecialchars($artiste['nom_art']); ?>" class="photo" onerror="this.src='../images/default_artiste.png';">
-            
-            <h3>
-                <a href="artiste.php?id=<?php echo $artiste['id_art']; ?>">
-                    <?php echo htmlspecialchars($artiste['nom_art']); ?>
-                </a>
-            </h3>
+            <a href="detail-artiste.php?id=<?= $artiste['id_art'] ?>" style="text-decoration: none; color: inherit;">
+                <img src="<?php echo htmlspecialchars($cheminImage); ?>" alt="Photo de <?php echo htmlspecialchars($artiste['nom_art']); ?>" class="photo" onerror="this.src='../images/default_artiste.png';">
+                
+                <h3>
+                    <a href="detail-artiste.php?id=<?php echo $artiste['id_art']; ?>">
+                        <?php echo htmlspecialchars($artiste['nom_art']); ?>
+                    </a>
+                </h3>
+            </a>
         </div>
     <?php } ?>
     </div>
