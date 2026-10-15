@@ -18,16 +18,17 @@
         <div class="grille-artistes"> 
             <?php foreach ($resultats_albums as $album): ?>
                 <div class="bloc">
-                    <?php 
-                    $cheminAlbum = !empty($album['img_album']) ? '../images/pochettes/' . $album['img_album'] : '../images/default_vinyle.png';
-                    ?>
+                <?php 
+                $cheminAlbum = !empty($album['img_album']) ? '../images/pochettes/' . $album['img_album'] : '../images/default_vinyle.png';
+                ?>
+                <!-- On ouvre le lien AVANT l'image -->
+                <a href="detail-vinyle.php?id=<?= $album['id_album'] ?>" style="text-decoration: none; color: inherit;">
                     <img src="<?= htmlspecialchars($cheminAlbum) ?>" alt="Pochette de <?= htmlspecialchars($album['titre_album']) ?>" class="photo" onerror="this.src='../images/default_vinyle.png';">
                     <h3>
-                        <a href="detail-vinyle.php?id=<?= $album['id_album'] ?>">
-                            <?= htmlspecialchars($album['titre_album']) ?>
-                        </a>
+                        <?= htmlspecialchars($album['titre_album']) ?>
                     </h3>
-                </div>
+                </a>
+            </div>
             <?php endforeach; ?>
         </div>
     <?php endif; ?>
@@ -43,12 +44,14 @@
                     <?php 
                     $cheminArtiste = !empty($artiste['img_art']) ? $artiste['img_art'] : '../images/default_artiste.png'; 
                     ?>
-                    <img src="<?= htmlspecialchars($cheminArtiste) ?>" alt="Photo de <?= htmlspecialchars($artiste['nom_art']) ?>" class="photo" onerror="this.src='../images/default_artiste.png';">
-                    <h3>
-                        <a href="artiste.php?id=<?= $artiste['id_art'] ?>">
-                            <?= htmlspecialchars($artiste['nom_art']) ?>
-                        </a>
-                    </h3>
+                    <a href="detail-artiste.php?id=<?= $artiste['id_art'] ?>" style="text-decoration: none; color: inherit;">
+                        <img src="<?= htmlspecialchars($cheminArtiste) ?>" alt="Photo de <?= htmlspecialchars($artiste['nom_art']) ?>" class="photo" onerror="this.src='../images/default_artiste.png';">
+                        <h3>
+                            <a href="artiste.php?id=<?= $artiste['id_art'] ?>">
+                                <?= htmlspecialchars($artiste['nom_art']) ?>
+                            </a>
+                        </h3>
+                    </a>
                 </div>
             <?php endforeach; ?>
         </div>
