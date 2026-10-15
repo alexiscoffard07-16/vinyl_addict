@@ -18,7 +18,9 @@
                         else 
                             $imgAlbum = '../images/default_vinyle.png'; 
                     ?>
-                        <img src="<?php echo htmlspecialchars($imgAlbum); ?>" alt="Pochette de <?php echo htmlspecialchars($favori['titre_album']); ?>" class="photo">
+                        <a href="detail-vinyle.php?id=<?= $favori['id_album'] ?>" style="text-decoration: none; color: inherit;">
+                            <img src="<?php echo htmlspecialchars($imgAlbum); ?>" alt="Pochette de <?php echo htmlspecialchars($favori['titre_album']); ?>" class="photo">
+                        </a>
                 </div>
                 <?php } ?>
             </div>
@@ -36,17 +38,13 @@
     <div class="grille-artistes">
     <?php foreach ($artistes as $artiste) { ?>
         <div class="bloc">
-            <?php 
-            $cheminImage = !empty($artiste['img_art']) ? $artiste['img_art'] : '../images/default_artiste.png'; 
-            ?>
-            <img src="<?php echo htmlspecialchars($cheminImage); ?>" alt="Photo de <?php echo htmlspecialchars($artiste['nom_art']); ?>" class="photo">
+            <?php $cheminImage = !empty($artiste['img_art']) ? $artiste['img_art'] : '../images/default_artiste.png'; ?>
             
-            <h3>
-                <a href="artiste.php?id=<?php echo $artiste['id_art']; ?>">
-                    <?php echo htmlspecialchars($artiste['nom_art']); ?>
-                </a>
-            </h3>
-        </div>
+            <a href="detail-artiste.php?id=<?= $artiste['id_art'] ?>" style="text-decoration: none; color: inherit; display: block;">
+                <img src="<?= htmlspecialchars($cheminImage) ?>" alt="Photo de <?= htmlspecialchars($artiste['nom_art']) ?>" class="photo">
+                <h3><?= htmlspecialchars($artiste['nom_art']) ?></h3>
+            </a>
+</div>
     <?php } ?>
     </div>
 </div>
