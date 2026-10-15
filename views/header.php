@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="Author" content="Alexis COFFARD" />
-    <link rel="stylesheet" href="../styles/style.css" type="text/css" />
+    <link rel="stylesheet" href="../styles/style.css?v=<?= time() ?>" type="text/css" />
     <script src="../scripts/script.js" type="text/javascript"></script>
     <title><?= isset($pageTitle) ? htmlspecialchars($pageTitle) : "Vinyl'Addict" ?></title>
 </head>
