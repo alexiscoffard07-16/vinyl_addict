@@ -6,7 +6,7 @@ require_once '../core/functions.php';
 
 // 3. LE CERVEAU : On prépare nos requêtes et on récupère les données
 $rqArtistes = $pdo->query("SELECT id_art, nom_art, img_art FROM Artiste LIMIT 4");
-$rqFavori   = $pdo->query("SELECT titre_album, img_album FROM Album WHERE est_coup_de_coeur = 1");
+$rqFavori   = $pdo->query("SELECT id_album, titre_album, img_album FROM Album WHERE est_coup_de_coeur = 1");
 
 $artistes = $rqArtistes->fetchAll(PDO::FETCH_ASSOC);
 $favoris  = $rqFavori->fetchAll(PDO::FETCH_ASSOC);
